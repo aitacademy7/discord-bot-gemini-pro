@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Configure sua chave de API
-genai.configure(api_key=os.getenv("AIzaSyCBaHkcw1e79Hy7_dfrDKEbifUYhyxIF48"))
+genai.configure(api_key=os.getenv("API KEY GEMINI"))
 
 # Inicializar o modelo
 model = genai.GenerativeModel('gemini-1.5-flash')
@@ -73,17 +73,6 @@ def get_gemini_response(message, image_data=None):
     except Exception as e:
         return [f"Ocorreu um erro: {e}"]
 
-#def generate_image(description):
-    try:
-        response = requests.post(
-            "https://deepart.io/api/tasks",
-            json={"text": description}
-        )
-        task_id = response.json()["id"]
-        image_url = f"https://deepart.io/api/tasks/{task_id}/result"
-        return image_url
-    except Exception as e:
-        return f"Ocorreu um erro: {e}"
 #gemini-pro
 
 import requests
